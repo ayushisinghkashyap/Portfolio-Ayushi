@@ -1,262 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ayushi Singh - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushi Singh - Data Analyst Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+        
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .project, .experience {
+            margin-bottom: 2rem;
+        }
+        
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .tool-tag {
+            background-color: var(--light-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-item h3 {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .percentage {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: var(--dark-bg);
+            color: white;
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+        /* Added styles for links */
+        a.project-link, a.certificate-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
 
-  <!-- Bootstrap & Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: #f8f9fa;
-      background: linear-gradient(270deg, #222831, #393E46, #222831);
-      background-size: 600% 600%;
-      animation: bg-animation 16s ease infinite;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
-
-    @keyframes bg-animation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 40px auto;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 0 25px rgba(35, 213, 233, 0.92);
-      text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .profile-img {
-      width: 140px;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #1fc4ed;
-      margin-bottom: 20px;
-      transition: 0.4s ease-in-out;
-      box-shadow: 0 0 12px #1fc4ed;
-    }
-
-    .profile-img:hover {
-      transform: scale(1.1) rotate(8deg);
-      border-radius: 30%;
-    }
-
-    h1, h2 {
-      color: #1fc4ed;
-      margin-top: 20px;
-      font-weight: bold;
-      text-shadow: 0 0 10px #1fc4ed;
-    }
-
-    h2 {
-      border-bottom: 2px solid #1fc4ed;
-      padding-bottom: 5px;
-      margin-top: 40px;
-      text-align: left;
-      position: relative;
-      transition: 0.3s;
-    }
-
-    h2:hover::after {
-      content: " ✨";
-      position: absolute;
-      right: -20px;
-      animation: sparkle 1s infinite;
-    }
-
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.7; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    ul {
-      text-align: left;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 10px;
-      transition: all 0.3s;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeInList 0.5s forwards;
-    }
-
-    li:nth-child(1) { animation-delay: 0.1s; }
-    li:nth-child(2) { animation-delay: 0.2s; }
-    li:nth-child(3) { animation-delay: 0.3s; }
-    li:nth-child(4) { animation-delay: 0.4s; }
-
-    @keyframes fadeInList {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    li:hover {
-      color: #e574e1;
-      transform: translateX(5px);
-    }
-
-    a {
-      color: #1dd1a1;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    a:hover {
-      color: #e574e1;
-      text-shadow: 0 0 5px #e574e1;
-    }
-
-    .contact a {
-      font-size: 1.8rem;
-      margin: 0 12px;
-      transition: transform 0.3s;
-    }
-
-    .contact i:hover {
-      transform: scale(1.3) rotate(8deg);
-      color: #48dbfb;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .typing {
-      font-size: 1.1rem;
-      color: #3daced;
-      border-right: 2px solid #3daced;
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
-      animation: typing 4s steps(50, end) forwards;
-      margin-bottom: 20px;
-    }
-
-    @keyframes typing {
-      to { width: 100%; }
-    }
-
-    [data-aos] {
-      transition: all 0.8s ease;
-    }
-  </style>
+        a.project-link:hover, a.certificate-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <img src="ayu_picsc.jpg" alt="Ayushi Singh" class="profile-img" data-aos="zoom-in"/>
-    <h1 data-aos="fade-up">Ayushi Singh</h1>
-    <p class="typing">B.Tech CSE (Data Science) | Data Analyst | Driving Business Decisions Through Data | Web Developer</p>
+    <header>
+        <div class="container">
+            <h1>AYUSHI SINGH</h1>
+            <p>Data Analyst | Driving Business Decisions Through Data</p>
+            <div class="contact-info">
+                <a href="mailto:ayushisinghpatel373@gmail.com">ayushisinghpate1373@gmail.com</a>
+                <a href="tel:6394293198">6394293198</a>
+                <a href="#">Uttar Pradesh, India</a>
+                <a href="https://www.linkedin.com/in/ayushi-singh-11a216256/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ayushisinghkashyap" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </header>
 
-    <div class="section" data-aos="fade-right">
-      <h2>About Me</h2>
-      <p>
-        I am a motivated and talented third-year B.Tech student with a strong academic background 
-        and a passion for data-driven problem-solving. I possess strong analytical thinking, 
-        the ability to interpret complex data, and communicate insights effectively. 
-        I am currently seeking an internship opportunity as a Data Analyst, 
-        where I can contribute to impactful projects and grow alongside a team of skilled professionals.
-      </p>
-    </div>
+    <main class="container">
+        <section id="about">
+            <h2>CAREER OBJECTIVE</h2>
+            <div class="card">
+                <p>I am a motivated and talented final-year B.Tech student specializing in Computer Science Engineering with a focus on Data Science. I possess strong analytical skills, a solid understanding of data handling, and effective communication abilities. Eager to leverage my skills in a Data Analyst internship, I am enthusiastic about contributing to impactful projects and growing professionally in a collaborative environment.</p>
+            </div>
+        </section>
 
-    <div class="section" data-aos="fade-left">
-      <h2>Skills</h2>
-      <ul>
-        <li>Web Technologies: HTML, CSS, Node.js, React.js, Express.js, .NET Core</li>
-        <li>Programming: Java, Python</li>
-        <li>Visualization: Power BI, Tableau</li>
-        <li>Others: Git/Github, Linux, VS Code, SQL, MongoDB</li>
-        <li>Soft Skills: Teamwork, Problem-Solving, Adaptability, Communication, Project Management</li>
-      </ul>
-    </div>
+        <section id="projects">
+            <h2>PROJECTS</h2>
+            <div class="project card">
+                <h3>Doctor With Your Convenience</h3>
+                <p class="date">Feb 2024</p>
+                <ul>
+                    <li>A mobile app enabling users to consult doctors online, book appointments, access prescriptions, and receive healthcare support remotely through chat or video calls.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">JAVA</span>
+                    <span class="tool-tag">HTML</span>
+                    <span class="tool-tag">CSS</span>
+                    <span class="tool-tag">JavaScript</span>
+                </div>
+            </div>
+            
+            <div class="project card">
+                <h3><a href="https://github.com/ayushisinghkashyap/project-bolt-Ayushi" target="_blank" class="project-link">BoltDash – Centralized Access & Analytics Panel</a></h3>
+                <p class="date">August 2025</p>
+                <ul>
+                    <li>Developed a responsive web application using React, TypeScript, and Tailwind CSS, featuring secure authentication, role-based dashboards, and reusable UI components.</li>
+                    <li>Integrated state management and custom hooks to enhance maintainability and performance.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">React.js</span>
+                    <span class="tool-tag">TypeScript</span>
+                    <span class="tool-tag">Tailwind CSS</span>
+                    <span class="tool-tag">Vite</span>
+                    <span class="tool-tag">Node.js</span>
+                    <span class="tool-tag">Git</span>
+                </div>
+            </div>
+        </section>
 
-    <div class="section" data-aos="fade-up">
-      <h2>Education</h2>
-      <ul>
-        <li>B.Tech CSE (Data Science), NIET (2022–2026) – CGPA: 8.2</li>
-        <li>12th CBSE – 77% | 10th CBSE – 82%</li>
-      </ul>
-    </div>
+        <section id="experience">
+            <h2>INTERNSHIPS</h2>
+            <div class="experience card">
+                <h3>Summer Intern <span>IIC and AICTE IDEA Lab - NIET</span></h3>
+                <p class="date">July 2023</p>
+                <p>Internship experience focused on hands-on projects in a lab environment</p>
+                <ul>
+                    <li>Designed and implemented a Color Segregation Machine using sensors and automation to identify and sort objects based on color, enhancing efficiency in material handling processes.</li>
+                    <li>Explored fundamentals of Augmented and Virtual Reality, including applications, tools, and development techniques.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">Arduino Uno</span>
+                    <span class="tool-tag">C</span>
+                </div>
+            </div>
+        </section>
 
-    <div class="section" data-aos="zoom-in-up">
-      <h2>Internships</h2>
-      <ul>
-        <li><strong>IIC and AICTE IDEA Lab- NIET</strong> (40 hours)</li>
-        <ul>
-          <li>Designed and implemented a Color Segregation Machine using sensors and automation to identify and sort
- objects based on color, enhancing efficiency in material handling processes</li>
-            <li>Tools- Arduino Uno , C , Sensor</li>
-            <li>Explored fundamentals of Augmented and Virtual Reality, including applications, tools, and development
- techniques</li>
-          </ul>
-      </ul>
-    </div>
+        <section id="skills">
+            <h2>SKILLS</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul>
+                        <li>SQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Version Control</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Operating Systems</h4>
+                    <ul>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Development Tools</h4>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Data Visualization</h4>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li>JAVA</li>
+                        <li>MySQL</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Competitive Coding</li>
+                        <li>Data Analysis</li>
+                        <li>Basics Of Data Structures</li>
+                        <li>Basics Of Machine Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Personal Skills</h4>
+                    <ul>
+                        <li>Self Starter</li>
+                        <li>Flexible & Adaptable</li>
+                        <li>Leadership</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <div class="section" data-aos="flip-left">
-      <h2>Projects</h2>
-      <ul>
-        <li>News Aggregator with API & animation</li>
-        <li>Pharma Dashboard (Power BI)</li>
-        <li>AR Filters: Face Mask, 3D House (Unity)</li>
-        <li>Responsive Portfolio Website</li>
-      </ul>
-    </div>
+        <section id="education">
+            <h2>EDUCATION</h2>
+            <div class="education-item card">
+                <h3>B.E in Computer Science Engineering - Data Science <span class="percentage">80%</span></h3>
+                <p class="date">2022 - 2026</p>
+                <p>NIET College</p>
+            </div>
+            
+            <div class="education-item card">
+                <h3>HSC (12th) <span class="percentage">77%</span></h3>
+                <p class="date">2021</p>
+                <p>S.N.P.S MZP CBSE</p>
+            </div>
+            
+            <div class="education-item card">
+                <h3>SSLC (10th) <span class="percentage">82.3%</span></h3>
+                <p class="date">2019</p>
+                <p>S.N.P.S MZP CBSE</p>
+            </div>
+        </section>
 
-    <div class="section" data-aos="flip-up">
-      <h2>Certifications</h2>
-      <ul>
-        <li><strong>Python, Java</strong> – Basics & OOP</li>
-        <li><strong>TensorFlow</strong> – ML Systems (Google)</li>
-        <li><strong>ReactJS</strong> – Component-based Dev</li>
-        <li><strong>Big Data</strong> – Concepts & Analytics</li>
-        <li><strong>Data Analysis</strong> – Using Python & R</li>
-        <li><a href="tr.html" target="_blank">View All on Certification </a></li>
-      </ul>
-    </div>
+        <section id="certificates">
+            <h2>CERTIFICATES</h2>
+            <div class="card">
+                <ul>
+                    <li><a href="1-f963c18e-9c51-4de2-a2dc-4d9ca9308791.pdf" target="_blank" class="certificate-link">Infosys - Data Analysis with Pandas and Python (Completed April 22, 2025)</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/UEG8PW9Z8Z57?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="certificate-link">Certificate of Basic Data Descriptors, Statistical Distributions, and Application to Business Decisions</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/VAUGW9YPDY9H?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="certificate-link">Certificate of Python Project for Data Science</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/WTJG8LGZ34X7?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" class="certificate-link">Certificate of Python for Data Science, AI and Development</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/YFJQ3ZP5HKY3?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="certificate-link">Certificate of Data Analysis with Python</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/JVCS358RYEVC?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" class="certificate-link">Human-Centered Design for Inclusive Innovation</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-    <div class="section contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <a href="mailto:ayushisinghpatel373@gmail.com"><i class="bi bi-envelope-fill"></i></a>
-      <a href="https://www.linkedin.com/in/ayushi-singh-11a216256/" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="https://github.com/ayushisinghkashyap" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://leetcode.com/u/ayushikashyap/" target="_blank"><i class="bi bi-code-slash"></i></a>
-      <a href="https://www.geeksforgeeks.org/user/ayushisingoy4z/" target="_blank"><i class="bi bi-code-slash"></i></a>
-    </div>
-  </div>
-
-  <script>
-    AOS.init();
-  </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ayushi Singh. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
