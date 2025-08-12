@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shruti's Certification Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #0eabeff9;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: slideUp 1s ease-in-out;
+    }
+
+    .filter-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-btns button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btns button:hover,
+    .filter-btns button.active {
+      background: #0eabeff9;
+      color: white;
+    }
+
+    .certification {
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 5px solid #0eabeff9;
+      background: #fafafa;
+      transition: 0.3s;
+    }
+
+    .certification:hover {
+      background: #f0f0ff;
+      transform: translateX(5px);
+    }
+
+    .certification a {
+      color: #0eabeff9;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .certification p {
+      margin: 5px 0;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ayushi's Certifications</h1>
+</header>
+
+<div class="container">
+  <div class="filter-btns">
+    <button class="active" onclick="filterCerts('all')">All</button>
+    <button onclick="filterCerts('coursera')">Coursera</button>
+    <button onclick="filterCerts('infosys')">Infosys</button>
+  </div>
+
+  <div id="certList">
+    <!-- All certificates in reverse chronology -->
+
+    <div class="certification coursera">
+      <p><strong>Python Project for Data Science</strong> – Feb 20, 2024 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/VAUGW9YPDY9H?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Data Analysis with Python</strong> – Nov 2, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/YFJQ3ZP5HKY3?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Basic Data Descriptors...</strong> – Oct 30, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/UEG8PW9Z8Z57?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Human-Centered Design for Inclusive Innovation</strong> – Apr 10, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/JVCS358RYEVC?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Python for Data Science, AI & Development</strong> – Apr 11, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/WTJG8LGZ34X7?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>What is Data Science?</strong> – Jan 30, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/YNDVPDA3RKRW?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Python Basics</strong> – Jan 6, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/KDX2XBJN9XLC?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course">View Certificate</a>
+    </div>
+
+    
+  </div>
+</div>
+
+<script>
+  function filterCerts(category) {
+    const certs = document.querySelectorAll('.certification');
+    const buttons = document.querySelectorAll('.filter-btns button');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    certs.forEach(cert => {
+      if (category === 'all' || cert.classList.contains(category)) {
+        cert.classList.remove('hidden');
+      } else {
+        cert.classList.add('hidden');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
