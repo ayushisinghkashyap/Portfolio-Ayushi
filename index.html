@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayushi Singh - Data Analyst Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-color);
+        }
+        
+        section {
+            padding: 2rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        section:last-child {
+            border-bottom: none;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        h3 {
+            color: var(--secondary-color);
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .card {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .project, .experience {
+            margin-bottom: 2rem;
+        }
+        
+        .date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+        }
+        
+        .tool-tag {
+            background-color: var(--light-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-item h3 {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .percentage {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background-color: var(--dark-bg);
+            color: white;
+        }
+
+        /* Added styles for links */
+        a.project-link, a.certificate-link {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a.project-link:hover, a.certificate-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AYUSHI SINGH</h1>
+            <p>Data Analyst | Driving Business Decisions Through Data</p>
+            <div class="contact-info">
+                <a href="mailto:ayushisinghpatel373@gmail.com">ayushisinghpate1373@gmail.com</a>
+                <a href="tel:6394293198">6394293198</a>
+                <a href="#">Uttar Pradesh, India</a>
+                <a href="https://www.linkedin.com/in/ayushi-singh-11a216256/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/ayushisinghkashyap" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about">
+            <h2>CAREER OBJECTIVE</h2>
+            <div class="card">
+                <p>I am a motivated and talented final-year B.Tech student specializing in Computer Science Engineering with a focus on Data Science. I possess strong analytical skills, a solid understanding of data handling, and effective communication abilities. Eager to leverage my skills in a Data Analyst internship, I am enthusiastic about contributing to impactful projects and growing professionally in a collaborative environment.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>PROJECTS</h2>
+
+            <div class="project card">
+                <h3><a href="https://github.com/ayushisinghkashyap/DataPipeline-Project-Ayushi" target="_blank" class="project-link">DataPipeline for Automated ETL</a></h3>
+                <p class="date">Sept 2025</p>
+                <ul>
+                    <li>An interactive tool to clean, transform, and visualize raw CSV data. Built with Next.js, React, and TypeScript, it automates preprocessing and generates interactive dashboards for quick insights.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">React.js</span>
+                    <span class="tool-tag">TypeScript</span>
+                    <span class="tool-tag">Tailwind CSS</span>
+                    <span class="tool-tag">Radix UI</span>
+                    <span class="tool-tag">Next.js</span>
+                    <span class="tool-tag">shadcn UI</span>
+                    <span class="tool-tag">Recharts</span>
+                    <span class="tool-tag">React Hook Form</span>
+                    <span class="tool-tag">Zod</span>
+                </div>
+            </div>
+            
+            <div class="project card">
+                <h3><a href="https://github.com/ayushisinghkashyap/project-bolt-Ayushi" target="_blank" class="project-link">BoltDash – Centralized Access & Analytics Panel</a></h3>
+                <p class="date">August 2025</p>
+                <ul>
+                    <li>Developed a responsive web application using React, TypeScript, and Tailwind CSS, featuring secure authentication, role-based dashboards, and reusable UI components.</li>
+                    <li>Integrated state management and custom hooks to enhance maintainability and performance.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">React.js</span>
+                    <span class="tool-tag">TypeScript</span>
+                    <span class="tool-tag">Tailwind CSS</span>
+                    <span class="tool-tag">Vite</span>
+                    <span class="tool-tag">Node.js</span>
+                    <span class="tool-tag">Git</span>
+                </div>
+            </div>
+
+            <div class="project card">
+                <h3>Doctor With Your Convenience</h3>
+                <p class="date">Feb 2024</p>
+                <ul>
+                    <li>A mobile app enabling users to consult doctors online, book appointments, access prescriptions, and receive healthcare support remotely through chat or video calls.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">JAVA</span>
+                    <span class="tool-tag">HTML</span>
+                    <span class="tool-tag">CSS</span>
+                    <span class="tool-tag">JavaScript</span>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="experience">
+            <h2>INTERNSHIPS</h2>
+            <div class="experience card">
+                <h3><a href="https://github.com/ayushisinghkashyap/Color-Segregation-Machine" target="_blank" class="project-link">Summer Intern<span> IIC and AICTE IDEA Lab - NIET</a></span></h3>
+                <p class="date">July 2023</p>
+                <p>Internship experience focused on hands-on projects in a lab environment</p>
+                <ul>
+                    <li>Designed and implemented a Color Segregation Machine using sensors and automation to identify and sort objects based on color, enhancing efficiency in material handling processes.</li>
+                    <li>Explored fundamentals of Augmented and Virtual Reality, including applications, tools, and development techniques.</li>
+                </ul>
+                <div class="tools">
+                    <span class="tool-tag">Arduino Uno</span>
+                    <span class="tool-tag">C</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>SKILLS</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul>
+                        <li>SQL</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Version Control</h4>
+                    <ul>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Operating Systems</h4>
+                    <ul>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Development Tools</h4>
+                    <ul>
+                        <li>Visual Studio Code</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Data Visualization</h4>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>Tableau</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Languages</h4>
+                    <ul>
+                        <li>JAVA</li>
+                        <li>MySQL</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Technical Skills</h4>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Competitive Coding</li>
+                        <li>Data Analysis</li>
+                        <li>Basics Of Data Structures</li>
+                        <li>Basics Of Machine Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Personal Skills</h4>
+                    <ul>
+                        <li>Self Starter</li>
+                        <li>Flexible & Adaptable</li>
+                        <li>Leadership</li>
+                        <li>Communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>EDUCATION</h2>
+            <div class="education-item card">
+                <h3>B.Tech in Computer Science Engineering - Data Science <span class="percentage">80%</span></h3>
+                <p class="date">2022 - 2026</p>
+                <p>NIET College</p>
+            </div>
+            
+            <div class="education-item card">
+                <h3>HSC (12th) <span class="percentage">77%</span></h3>
+                <p class="date">2021</p>
+                <p>S.N.P.S MZP CBSE</p>
+            </div>
+            
+            <div class="education-item card">
+                <h3>SSLC (10th) <span class="percentage">82.3%</span></h3>
+                <p class="date">2019</p>
+                <p>S.N.P.S MZP CBSE</p>
+            </div>
+        </section>
+
+        <section id="certificates">
+            <h2>CERTIFICATES</h2>
+            <div class="card">
+                <ul>
+                    <li><a href="1-f963c18e-9c51-4de2-a2dc-4d9ca9308791.pdf" target="_blank" class="certificate-link">Infosys - Data Analysis with Pandas and Python (Completed April 22, 2025)</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/UEG8PW9Z8Z57?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="certificate-link">Certificate of Basic Data Descriptors, Statistical Distributions, and Application to Business Decisions</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/VAUGW9YPDY9H?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="certificate-link">Certificate of Python Project for Data Science</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/WTJG8LGZ34X7?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" class="certificate-link">Certificate of Python for Data Science, AI and Development</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/YFJQ3ZP5HKY3?utm_source=wa&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=course" target="_blank" class="certificate-link">Certificate of Data Analysis with Python</a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/JVCS358RYEVC?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank" class="certificate-link">Human-Centered Design for Inclusive Innovation</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ayushi Singh. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
